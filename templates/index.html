@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClubSpace | Quản lý câu lạc bộ</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main id="login-screen" class="login-screen">
+    <section class="login-card">
+      <div class="brand-mark">C</div>
+      <div id="auth-content"></div>
+    </section>
+    <aside class="login-aside">
+      <div class="aside-orb orb-one"></div><div class="aside-orb orb-two"></div>
+      <span class="pill">CLB • CÙNG NHAU TẠO NÊN KHÁC BIỆT</span>
+      <h2>Mọi hoạt động<br>trong tầm tay.</h2>
+      <p>Quản lý thành viên, sự kiện và nhiệm vụ trên cùng một nền tảng — với AI đồng hành khi bạn cần.</p>
+      <div class="aside-stats"><div><b>01</b><span>Không gian chung</span></div><div><b>∞</b><span>Ý tưởng mới</span></div></div>
+    </aside>
+  </main>
+
+  <div id="app-screen" class="app-shell hidden">
+    <aside class="sidebar">
+      <a class="brand" href="/" id="home-brand" aria-label="Về trang chủ"><span class="brand-mark small">C</span><span>clubspace<small>CLB SINH VIÊN</small></span></a>
+      <p class="nav-caption">KHÔNG GIAN LÀM VIỆC</p>
+      <nav id="navigation">
+        <button class="nav-item active" data-page="dashboard"><span>⌂</span>Tổng quan</button>
+        <button class="nav-item" data-page="members"><span>♙</span>Thành viên</button>
+        <button class="nav-item" data-page="activities"><span>◷</span>Hoạt động</button>
+        <button class="nav-item" data-page="my-activities"><span>▤</span>Lịch sử của tôi</button>
+        <button class="nav-item" data-page="tasks"><span>☑</span>Nhiệm vụ</button>
+        <button class="nav-item" data-page="announcements"><span>◉</span>Thông báo</button>
+        <button class="nav-item" data-page="ai"><span>✦</span>Trợ lý AI <i>NEW</i></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="club-card"><span class="club-icon">✳</span><div><b>CLB Sinh viên</b><small>Không gian của bạn</small></div></div>
+        <div class="user-mini"><button class="avatar profile-avatar" id="user-avatar" type="button" aria-label="Xem hồ sơ tài khoản">C</button><div class="user-mini-text"><b id="user-name">Thành viên</b><small id="user-role">Thành viên</small></div><button id="logout-button" title="Đăng xuất">↗</button></div>
+      </div>
+    </aside>
+
+    <section class="main-area">
+      <header class="topbar"><div class="breadcrumb">CLB Sinh viên <span>/</span> <b id="page-name">Tổng quan</b></div><div class="top-actions"><span class="today" id="today-label"></span><button class="top-avatar profile-avatar" id="top-avatar" type="button" aria-label="Xem hồ sơ tài khoản">C</button></div></header>
+      <main class="content" id="content"></main>
+      <footer>ClubSpace <span>·</span> Không gian kết nối và phát triển</footer>
+    </section>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</body>
+</html>
